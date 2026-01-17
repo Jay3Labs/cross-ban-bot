@@ -1,4 +1,5 @@
 import { type CommandInteraction, Container } from '@dressed/react'
+import { user } from 'discord-fmt'
 import { type CommandConfig, CommandOption, getBan } from 'dressed'
 import { unwrap } from '../../utilities'
 
@@ -24,7 +25,22 @@ export default async function lookup(interaction: CommandInteraction<typeof conf
   const userId = interaction.getOption('user', true).user().id
   const [err, result] = await unwrap(getBan(process.env.PRIMARY_GUILD_ID, userId))
 
-  console.log(err, result)
+  if (err) {
+    if (err.cause && (err.cause as { status: number }).status === 404) {
+      return await interaction.editReply(<Container>{user(userId)} is not currently banned</Container>)
+    } else {
+      console.error(err)
+      return await interaction.editReply(<Container>Error looking up ban information</Container>)
+    }
+  }
 
-  // return await interaction.y(<Container>Lookup</Container>)
+  return await interaction.editReply(
+    <Container>
+      {user(userId)} (`{result.user.username}`) is currently banned
+      {'\n'}
+      ### Reason
+      {'\n'}
+      {result.reason ?? 'No reason provided'}
+    </Container>,
+  )
 }

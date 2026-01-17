@@ -14,3 +14,15 @@ connection.onInteractionCreate((data) => {
   const interaction = createInteraction(data)
   handleInteraction(commands, components, interaction, config.middleware)
 })
+
+process.on('uncaughtException', (err) => {
+  console.error(err)
+})
+
+process.on('unhandledRejection', (reason) => {
+  if (reason instanceof Error) {
+    console.error({ err: reason })
+  } else {
+    console.error(String(reason))
+  }
+})
