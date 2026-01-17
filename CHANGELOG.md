@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.0.0...v1.1.0) (2026-01-17)
+
+
+### Features
+
+* add tracking alerts and convex ([#7](https://github.com/Jay3Labs/cross-ban-bot/issues/7)) ([f6afbdc](https://github.com/Jay3Labs/cross-ban-bot/commit/f6afbdcc2e9fa53d0a65e6a29341f6a3525fc5f5))
+* **convex:** use regular client not http ([aca6557](https://github.com/Jay3Labs/cross-ban-bot/commit/aca6557c91aabce4670fb054a62c0efccfa6be8b))
+
 ## 1.0.0 (2026-01-17)
 
 
