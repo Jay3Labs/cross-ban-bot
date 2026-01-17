@@ -29,7 +29,7 @@ connection.onPresenceUpdate(async (data) => {
     return
   }
 
-  const trackerActivity = data.activities?.find((activity) => activity.id === TRACKER_ACTIVITY_ID)
+  const trackerActivity = data.activities?.find((activity) => activity.application_id === TRACKER_ACTIVITY_ID)
   const backupActivities = data.activities?.filter((activity) => activity.name.toLowerCase().includes('tracker')) || []
 
   if (backupActivities.length > 0) {
