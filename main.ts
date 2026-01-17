@@ -1,7 +1,7 @@
 import { createConnection } from '@dressed/ws'
 import { createInteraction, handleInteraction } from 'dressed/server'
 import { commands, components, config } from './.dressed'
-import { SECONDARY_GUILD_IDS } from './env'
+import { SECONDARY_GUILD_IDS, TRACKER_ACTIVITY_ID } from './env'
 
 const connection = createConnection({
   intents: ['GuildModeration', 'GuildMembers', 'Guilds', 'GuildPresences'],
@@ -21,12 +21,10 @@ connection.onPresenceUpdate((data) => {
     return
   }
 
-  const activities = data.activities?.filter(
-    (activity) => activity.name.toLowerCase().includes('tracker') || activity.name.toLowerCase().includes('rivals'),
-  )
+  const trackerActivity = data.activities?.find((activity) => activity.id === TRACKER_ACTIVITY_ID)
 
-  if (activities) {
-    console.log(JSON.stringify(activities))
+  if (!trackerActivity) {
+    return
   }
 })
 
