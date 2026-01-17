@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.1.0...v1.2.0) (2026-01-17)
+
+
+### Features
+
+* add activity data to schema ([c338250](https://github.com/Jay3Labs/cross-ban-bot/commit/c338250b70c2c782942660fcfd18cbb88641ab8a))
+
+
+### Bug Fixes
+
+* add back logging ([6d3acf3](https://github.com/Jay3Labs/cross-ban-bot/commit/6d3acf390bef1afd4441c6a33581c2e9fdd2d9ab))
+* add more logging ([6f51caf](https://github.com/Jay3Labs/cross-ban-bot/commit/6f51caf3df05ff6c22bf699a3ef8df4965de47fe))
+* im an idiot and used the wrong key ([8639082](https://github.com/Jay3Labs/cross-ban-bot/commit/86390825545c01ebbf34abb97b478f070119406d))
+
 ## [1.1.0](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.0.0...v1.1.0) (2026-01-17)
 
 
