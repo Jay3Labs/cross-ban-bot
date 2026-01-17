@@ -5,5 +5,7 @@ declare namespace NodeJS {
     DISCORD_PUBLIC_KEY: string
     PRIMARY_GUILD_ID: string
     SECONDARY_GUILD_IDS: string
+    TRACKER_ACTIVITY_ID: string
+    CONVEX_HTTP_URL: string
   }
 }
