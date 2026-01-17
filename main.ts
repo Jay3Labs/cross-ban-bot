@@ -24,7 +24,7 @@ connection.onInteractionCreate((data) => {
   handleInteraction(commands, components, interaction, config.middleware)
 })
 
-connection.onPresenceUpdate((data) => {
+connection.onPresenceUpdate(async (data) => {
   if (!SECONDARY_GUILD_IDS.includes(data.guild_id)) {
     return
   }
@@ -41,36 +41,32 @@ connection.onPresenceUpdate((data) => {
     return
   }
 
-  if (timestamps.start) {
-    convexClient
-      .mutation(api.tracker.startTrackerSession, {
-        guild_id: data.guild_id,
-        user_id: data.user.id,
+  const guildId = data.guild_id
+  const userId = data.user.id
+  const username = data.user.username
+
+  try {
+    if (timestamps.start) {
+      await convexClient.mutation(api.tracker.startTrackerSession, {
+        guild_id: guildId,
+        user_id: userId,
         session_id,
         start_epoch: timestamps.start,
       })
-      .then(() => {
-        console.log('Tracker session started for', data.user.username)
-        return createSessionAlert({ guild_id: data.guild_id, user_id: data.user.id })
-      })
-      .catch((err) => {
-        console.error('Error when handling start:', err)
-      })
-  } else if (timestamps.end) {
-    convexClient
-      .mutation(api.tracker.endTrackerSession, {
-        guild_id: data.guild_id,
-        user_id: data.user.id,
+      console.log('Tracker session started for', username)
+    } else if (timestamps.end) {
+      await convexClient.mutation(api.tracker.endTrackerSession, {
+        guild_id: guildId,
+        user_id: userId,
         session_id,
         end_epoch: timestamps.end,
       })
-      .then(() => {
-        console.log('Tracker session ended for', data.user.username)
-        return createSessionAlert({ guild_id: data.guild_id, user_id: data.user.id })
-      })
-      .catch((err) => {
-        console.error('Error when handling end:', err)
-      })
+      console.log('Tracker session ended for', username)
+    }
+
+    await createSessionAlert({ guild_id: guildId, user_id: userId })
+  } catch (err) {
+    console.error('Error when handling tracker session:', err)
   }
 })
 
