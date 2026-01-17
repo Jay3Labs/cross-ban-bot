@@ -6,7 +6,7 @@ import { unwrap } from '../../utilities'
 export const config = {
   description: "Lookup a user's ban information (if available)",
   integration_type: 'Guild',
-  guilds: [process.env.PRIMARY_GUILD_ID],
+  guilds: process.env.SECONDARY_GUILD_IDS.split(','),
   default_member_permissions: ['BanMembers'],
   contexts: ['Guild'],
   options: [
