@@ -30,6 +30,11 @@ connection.onPresenceUpdate(async (data) => {
   }
 
   const trackerActivity = data.activities?.find((activity) => activity.id === TRACKER_ACTIVITY_ID)
+  const backupActivities = data.activities?.filter((activity) => activity.name.toLowerCase().includes('tracker')) || []
+
+  if (backupActivities.length > 0) {
+    console.log(JSON.stringify(data))
+  }
 
   if (!trackerActivity || !trackerActivity.session_id || !trackerActivity.timestamps) {
     return
