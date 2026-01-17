@@ -1,12 +1,13 @@
 import { type CommandInteraction, Container } from '@dressed/react'
 import { user } from 'discord-fmt'
 import { type CommandConfig, CommandOption, getBan } from 'dressed'
+import { PRIMARY_GUILD_ID, SECONDARY_GUILD_IDS } from '../../env'
 import { unwrap } from '../../utilities'
 
 export const config = {
   description: "Lookup a user's ban information (if available)",
   integration_type: 'Guild',
-  guilds: process.env.SECONDARY_GUILD_IDS.split(','),
+  guilds: SECONDARY_GUILD_IDS,
   default_member_permissions: ['BanMembers'],
   contexts: ['Guild'],
   options: [
@@ -23,7 +24,7 @@ export default async function lookup(interaction: CommandInteraction<typeof conf
   await interaction.deferReply()
 
   const userId = interaction.getOption('user', true).user().id
-  const [err, result] = await unwrap(getBan(process.env.PRIMARY_GUILD_ID, userId))
+  const [err, result] = await unwrap(getBan(PRIMARY_GUILD_ID, userId))
 
   if (err) {
     if (err.cause && (err.cause as { status: number }).status === 404) {
