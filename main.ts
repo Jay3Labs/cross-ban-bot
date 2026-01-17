@@ -36,19 +36,27 @@ connection.onPresenceUpdate(async (data) => {
     console.log(JSON.stringify(data))
   }
 
-  if (!trackerActivity || !trackerActivity.session_id || !trackerActivity.timestamps) {
+  if (!trackerActivity) {
+    return
+  }
+
+  if (!trackerActivity.session_id || !trackerActivity.timestamps) {
+    console.log('No session_id or timestamps found for tracker activity')
     return
   }
 
   const { session_id, timestamps } = trackerActivity
 
   if (!timestamps.start && !timestamps.end) {
+    console.log('No timestamps found for tracker activity')
     return
   }
 
   const guildId = data.guild_id
   const userId = data.user.id
   const username = data.user.username
+
+  console.log(`Updating tracker session for ${username} (${userId}) in guild ${guildId}`)
 
   try {
     if (timestamps.start) {
@@ -67,6 +75,8 @@ connection.onPresenceUpdate(async (data) => {
         end_epoch: timestamps.end,
       })
       console.log('Tracker session ended for', username)
+    } else {
+      console.log('No timestamps found for tracker activity')
     }
 
     await createSessionAlert({ guild_id: guildId, user_id: userId })
