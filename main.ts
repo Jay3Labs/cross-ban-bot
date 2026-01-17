@@ -1,5 +1,5 @@
 import { createConnection } from '@dressed/ws'
-import { ConvexHttpClient } from 'convex/browser'
+import { ConvexClient } from 'convex/browser'
 import { type APIMessageTopLevelComponent, MessageFlags } from 'discord-api-types/v10'
 import { list, user } from 'discord-fmt'
 import { Container, editWebhookMessage, executeWebhook, TextDisplay } from 'dressed'
@@ -9,7 +9,7 @@ import { api } from './convex/_generated/api'
 import { SECONDARY_GUILD_IDS, TRACKER_ACTIVITY_ID, WEBHOOK_ID, WEBHOOK_TOKEN } from './env'
 import { unwrap } from './utilities'
 
-const convexClient = new ConvexHttpClient(process.env.CONVEX_HTTP_URL || '')
+const convexClient = new ConvexClient(process.env.CONVEX_URL || '')
 
 const connection = createConnection({
   intents: ['GuildModeration', 'GuildMembers', 'Guilds', 'GuildPresences'],
