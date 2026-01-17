@@ -20,6 +20,7 @@ FROM base AS release
 COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app .
 RUN bun dressed build
+RUN bun convex deploy
 
 USER bun
 ENTRYPOINT [ "bun", "run", "main.ts" ]
