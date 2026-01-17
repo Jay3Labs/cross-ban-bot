@@ -70,3 +70,40 @@ export const endTrackerSession = mutation({
     })
   },
 })
+
+export const getSessionAlert = query({
+  args: {
+    guild_id: v.string(),
+    user_id: v.string(),
+  },
+  async handler(ctx, args) {
+    return await ctx.db
+      .query('tracker_session_alerts')
+      .withIndex('by_guild_id_and_user_id', (q) => q.eq('guild_id', args.guild_id).eq('user_id', args.user_id))
+      .first()
+  },
+})
+
+export const createSessionAlert = mutation({
+  args: {
+    guild_id: v.string(),
+    user_id: v.string(),
+    message_id: v.string(),
+  },
+  async handler(ctx, args) {
+    const exists = await ctx.db
+      .query('tracker_session_alerts')
+      .withIndex('by_guild_id_and_user_id', (q) => q.eq('guild_id', args.guild_id).eq('user_id', args.user_id))
+      .first()
+
+    if (exists) {
+      return
+    }
+
+    return await ctx.db.insert('tracker_session_alerts', {
+      guild_id: args.guild_id,
+      user_id: args.user_id,
+      message_id: args.message_id,
+    })
+  },
+})
