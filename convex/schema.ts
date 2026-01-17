@@ -6,6 +6,7 @@ export default defineSchema({
     guild_id: v.string(),
     user_id: v.string(),
     session_id: v.string(),
+    activity_data: v.string(),
     start_epoch: v.optional(v.number()),
     end_epoch: v.optional(v.number()),
   })

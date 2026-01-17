@@ -65,6 +65,7 @@ connection.onPresenceUpdate(async (data) => {
         user_id: userId,
         session_id,
         start_epoch: timestamps.start,
+        activity_data: JSON.stringify(trackerActivity),
       })
       console.log('Tracker session started for', username)
     } else if (timestamps.end) {
@@ -73,6 +74,7 @@ connection.onPresenceUpdate(async (data) => {
         user_id: userId,
         session_id,
         end_epoch: timestamps.end,
+        activity_data: JSON.stringify(trackerActivity),
       })
       console.log('Tracker session ended for', username)
     } else {

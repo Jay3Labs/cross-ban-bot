@@ -20,6 +20,7 @@ export const startTrackerSession = mutation({
     user_id: v.string(),
     session_id: v.string(),
     start_epoch: v.number(),
+    activity_data: v.string(),
   },
   async handler(ctx, args) {
     const exists = await ctx.db
@@ -40,6 +41,7 @@ export const startTrackerSession = mutation({
       user_id: args.user_id,
       session_id: args.session_id,
       start_epoch: args.start_epoch,
+      activity_data: args.activity_data,
     })
   },
 })
@@ -50,6 +52,7 @@ export const endTrackerSession = mutation({
     user_id: v.string(),
     session_id: v.string(),
     end_epoch: v.number(),
+    activity_data: v.string(),
   },
   async handler(ctx, args) {
     const exists = await ctx.db
@@ -67,6 +70,7 @@ export const endTrackerSession = mutation({
 
     await ctx.db.patch('tracker_sessions', exists._id, {
       end_epoch: args.end_epoch,
+      activity_data: args.activity_data,
     })
   },
 })
