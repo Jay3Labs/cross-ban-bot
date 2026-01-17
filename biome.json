@@ -3,7 +3,14 @@
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/.dressed", "!.release-please*", "!package.json", "!**/bot/dressed/events/*.ts"]
+    "includes": [
+      "**",
+      "!**/.dressed",
+      "!.release-please*",
+      "!package.json",
+      "!**/bot/dressed/events/*.ts",
+      "!**/convex/_generated/"
+    ]
   },
   "formatter": {
     "enabled": true,
