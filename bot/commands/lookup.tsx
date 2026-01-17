@@ -24,6 +24,8 @@ export default async function lookup(interaction: CommandInteraction<typeof conf
   await interaction.deferReply()
 
   const userId = interaction.getOption('user', true).user().id
+
+  console.log(`${interaction.user.username} is looking up ${userId}`)
   const [err, result] = await unwrap(getBan(PRIMARY_GUILD_ID, userId))
 
   if (err) {
