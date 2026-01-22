@@ -7,7 +7,7 @@
     "@dressed/react": "1.8.4",
     "@dressed/ws": "0.4.6",
     "await-to-js": "3.0.0",
-    "convex": "1.31.5",
+    "convex": "1.31.6",
     "discord-api-types": "0.38.37",
     "discord-fmt": "1.0.1",
     "dressed": "1.10.1",
