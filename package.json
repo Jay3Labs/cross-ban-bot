@@ -11,7 +11,7 @@
     "discord-api-types": "0.38.37",
     "discord-fmt": "1.0.1",
     "dressed": "1.10.1",
-    "pino": "10.2.0",
+    "pino": "10.3.0",
     "pino-loki": "3.0.0",
     "pino-std-serializers": "7.1.0",
     "react": "19.2.3"
