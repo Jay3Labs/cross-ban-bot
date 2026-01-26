@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.2.0...v1.2.1) (2026-01-26)
+
+
+### Chores
+
+* **deps:** lock file maintenance ([#14](https://github.com/Jay3Labs/cross-ban-bot/issues/14)) ([b6399bc](https://github.com/Jay3Labs/cross-ban-bot/commit/b6399bc848bda00a0ca1124af06bde0d15603bb0))
+
 ## [1.2.0](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.1.0...v1.2.0) (2026-01-17)
 
 
