@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.2.1](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.2.0...v1.2.1) (2026-06-15)
+
+
+### Chores
+
+* **deps:** lock file maintenance ([#14](https://github.com/Jay3Labs/cross-ban-bot/issues/14)) ([b6399bc](https://github.com/Jay3Labs/cross-ban-bot/commit/b6399bc848bda00a0ca1124af06bde0d15603bb0))
+* **deps:** lock file maintenance ([#18](https://github.com/Jay3Labs/cross-ban-bot/issues/18)) ([dc808ac](https://github.com/Jay3Labs/cross-ban-bot/commit/dc808ac3cb70ee4f152c6ea5b989e7f48942c16b))
+* **deps:** lock file maintenance ([#19](https://github.com/Jay3Labs/cross-ban-bot/issues/19)) ([3ed3ef6](https://github.com/Jay3Labs/cross-ban-bot/commit/3ed3ef6d8fe5e82adb9ef2e8927be7e3eda19397))
+* **deps:** lock file maintenance ([#20](https://github.com/Jay3Labs/cross-ban-bot/issues/20)) ([57a18ed](https://github.com/Jay3Labs/cross-ban-bot/commit/57a18ed2ee21156185cc07b6b132c3103ae88126))
+* **deps:** lock file maintenance ([#21](https://github.com/Jay3Labs/cross-ban-bot/issues/21)) ([f0601e3](https://github.com/Jay3Labs/cross-ban-bot/commit/f0601e30bb00a5e0e88886d53ad0d3df86bde3c9))
+* **deps:** lock file maintenance ([#22](https://github.com/Jay3Labs/cross-ban-bot/issues/22)) ([5612785](https://github.com/Jay3Labs/cross-ban-bot/commit/5612785e40664e3fa536f2d5d29e5b48cb4dad49))
+* **deps:** lock file maintenance ([#23](https://github.com/Jay3Labs/cross-ban-bot/issues/23)) ([f84c08f](https://github.com/Jay3Labs/cross-ban-bot/commit/f84c08f3871475f1cf16abb6c8038c17e8dc2e56))
+* **deps:** lock file maintenance ([#24](https://github.com/Jay3Labs/cross-ban-bot/issues/24)) ([a3c6ecc](https://github.com/Jay3Labs/cross-ban-bot/commit/a3c6ecc67f7b31f7557ee2f04a6f3221abca7fa2))
+* **deps:** lock file maintenance ([#26](https://github.com/Jay3Labs/cross-ban-bot/issues/26)) ([7bd1507](https://github.com/Jay3Labs/cross-ban-bot/commit/7bd15074571865cff763516598d7ae6b17b88708))
+* **deps:** lock file maintenance ([#27](https://github.com/Jay3Labs/cross-ban-bot/issues/27)) ([e1a7dc8](https://github.com/Jay3Labs/cross-ban-bot/commit/e1a7dc81e93b8b0e0e05957824cdda34bad982d3))
+* **deps:** lock file maintenance ([#29](https://github.com/Jay3Labs/cross-ban-bot/issues/29)) ([9f6b579](https://github.com/Jay3Labs/cross-ban-bot/commit/9f6b579f6b9c0c786f8cf28c42efd4e47706ccac))
+* **deps:** lock file maintenance ([#31](https://github.com/Jay3Labs/cross-ban-bot/issues/31)) ([07f99b2](https://github.com/Jay3Labs/cross-ban-bot/commit/07f99b2a8d24b7d54fb00d0943e859f93139b551))
+* **deps:** lock file maintenance ([#32](https://github.com/Jay3Labs/cross-ban-bot/issues/32)) ([7228bda](https://github.com/Jay3Labs/cross-ban-bot/commit/7228bdadb6b01512acaa7f98f854d9f617f9042e))
+* **deps:** lock file maintenance ([#33](https://github.com/Jay3Labs/cross-ban-bot/issues/33)) ([d2c54bc](https://github.com/Jay3Labs/cross-ban-bot/commit/d2c54bccc1203a7ecdf716ce2acb4ad5685d79f8))
+* **deps:** lock file maintenance ([#35](https://github.com/Jay3Labs/cross-ban-bot/issues/35)) ([4003ef0](https://github.com/Jay3Labs/cross-ban-bot/commit/4003ef0723117f074ee8464ab68e64e80086120f))
+* **deps:** lock file maintenance ([#36](https://github.com/Jay3Labs/cross-ban-bot/issues/36)) ([b053bb4](https://github.com/Jay3Labs/cross-ban-bot/commit/b053bb490b92515607bbdf7e8587978d8d69e2ff))
+
 ## [1.2.0](https://github.com/Jay3Labs/cross-ban-bot/compare/v1.1.0...v1.2.0) (2026-01-17)
 
 
